@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "766943688283",
+    "project_id": "dejavu-65fe7",
+    "storage_bucket": "dejavu-65fe7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766943688283:android:2ef2e6fba23bbe2f03b17e",
+        "android_client_info": {
+          "package_name": "com.example.dejavu_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766943688283-iompl1sin7g78239l9ju9oa4ajh9fpv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcPIi0Gi2wGTDmLM4jErHKhifkhIFepF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766943688283-iompl1sin7g78239l9ju9oa4ajh9fpv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
