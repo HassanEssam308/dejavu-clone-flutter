@@ -1,6 +1,9 @@
+
+import 'package:dejavu_clone/Views/pages/ProductsOfOffers/productsofofferspage.dart';
+import 'package:dejavu_clone/Views/widgets/Drawer/GetsubCategory.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../pages/User/Login.dart';
+import '../../pages/User/Login.dart';
 
 class SharedDrawer extends StatefulWidget {
   const SharedDrawer({super.key});
@@ -18,7 +21,9 @@ class _SharedDrawerState extends State<SharedDrawer> {
         catName,
         style: const TextStyle(fontSize: 18),
       ),
-      onTap: () {},
+      onTap: () {
+         Get.to(() => Login());
+      },
     );
   }
 
@@ -89,6 +94,7 @@ class _SharedDrawerState extends State<SharedDrawer> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                    
                       const Text(
                         'Shoes',
                         style: TextStyle(fontSize: 20),
@@ -101,12 +107,13 @@ class _SharedDrawerState extends State<SharedDrawer> {
                       : Padding(
                           padding: const EdgeInsets.all(12.5),
                           child: Column(
-                            children: [
-                              subCategory(' Ankle Boots'),
-                              const SizedBox(height: 15),
-                              subCategory('Half Boots'),
-                              const SizedBox(height: 15),
-                              subCategory('High Boots'),
+                            children: const [
+                              GetSubCategory(categoryName:'Shoes' ,)
+                              // subCategory(' Ankle Boots'),
+                              // const SizedBox(height: 15),
+                              // subCategory('Half Boots'),
+                              // const SizedBox(height: 15),
+                              // subCategory('High Boots'),
                             ],
                           ),
                         ),
@@ -142,10 +149,11 @@ class _SharedDrawerState extends State<SharedDrawer> {
                           padding: const EdgeInsets.all(12.5),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              subCategory('Handbags'),
-                              const SizedBox(height: 15),
-                              subCategory('Shoulder Bags'),
+                            children: const [
+                               GetSubCategory(categoryName:'Bags' ,)
+                              // subCategory('Handbags'),
+                              // const SizedBox(height: 15),
+                              // subCategory('Shoulder Bags'),
                             ],
                           ),
                         ),
@@ -163,7 +171,12 @@ class _SharedDrawerState extends State<SharedDrawer> {
             padding: const EdgeInsets.only(left: 10.0),
             child: InkWell(
               child: const Text('Offers', style: TextStyle(fontSize: 20)),
-              onTap: () {},
+              onTap: () {
+                Get.to(()=>const ProductsOfOffersPage(
+                  categoryID:'nuWveyFOC62RoDdaFbqK',
+                  categoryName:'Offers'
+                ));
+              },
             ),
           ),
           const SizedBox(height: 15),

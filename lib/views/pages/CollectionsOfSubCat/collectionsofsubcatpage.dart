@@ -40,7 +40,10 @@ class CollectionsOfSubCatPage extends StatelessWidget {
             }
 
             return Scaffold(
-              appBar: AppBar(
+             
+              appBar: AppBar( 
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
                 title: Text(' ${snapshot.data!.docs[0]['catname']}'),
               ),
               body: ListView(
@@ -99,9 +102,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w400,
                               ),
-                              // shape: RoundedRectangleBorder(
-                              //   borderRadius: BorderRadius.circular(50),
-                              // ),
+                            
                             ),
                             child: Column(
                             
@@ -121,7 +122,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                // Image.network("https://cdn.shopify.com/s/files/1/0499/3079/7217/products/SUN-DVTH-007-BEIGE_1_900x.jpg?v=1671525120"),
+                                
                                 Padding(
                                   padding: const EdgeInsets.only(top: 8),
                                   child: Text(

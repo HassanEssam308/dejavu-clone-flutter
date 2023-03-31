@@ -1,7 +1,7 @@
+import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../widgets/BaseAppBar.dart';
-import '../../widgets/SharedDrawer.dart';
 import 'Register.dart';
 import 'ResetPassword.dart';
 

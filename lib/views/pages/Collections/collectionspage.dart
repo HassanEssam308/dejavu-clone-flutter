@@ -1,3 +1,5 @@
+import 'package:dejavu_clone/Views/widgets/BaseAppBar.dart';
+import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
 import 'package:dejavu_clone/views/pages/CollectionsOfSubCat/collectionsofsubcatpage.dart';
 import 'package:dejavu_clone/views/pages/ProductsOfOffers/productsofofferspage.dart';
 
@@ -10,7 +12,8 @@ class CollectionsOfCategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> categories =
-        FirebaseFirestore.instance.collection('category').snapshots();
+        FirebaseFirestore.instance.
+        collection('category').snapshots();
     return StreamBuilder<QuerySnapshot>(
         stream: categories,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -25,66 +28,71 @@ class CollectionsOfCategoriesPage extends StatelessWidget {
           }
 
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('categories'),
-            ),
+            appBar: BaseAppBar(),
             body: ListView(children: [
-              Column(
-                children: snapshot.data!.docs.map((DocumentSnapshot document) {
-                  Map<String, dynamic> data =
-                      document.data()! as Map<String, dynamic>;
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                child: Column(
+                  children:
+                      snapshot.data!.docs.map((DocumentSnapshot document) {
+                    Map<String, dynamic> data =
+                        document.data()! as Map<String, dynamic>;
 
-                  return Container(
-                    height: MediaQuery.of(context).size.height / 7.5,
-                    padding: const EdgeInsets.all(6),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (document.id == 'nuWveyFOC62RoDdaFbqK') {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ProductsOfOffersPage(
-                                categoryID: 'nuWveyFOC62RoDdaFbqK',
-                                categoryName: 'Offers',
+                    return Container(
+                      height: MediaQuery.of(context).size.height / 7.5,
+                      padding: const EdgeInsets.all(6),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (document.id == 'nuWveyFOC62RoDdaFbqK') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const ProductsOfOffersPage(
+                                  categoryID: 'nuWveyFOC62RoDdaFbqK',
+                                  categoryName: 'Offers',
+                                ),
                               ),
-                            ),
-                          );
-                        } else {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CollectionsOfSubCatPage(
-                                categoryId: document.id,
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CollectionsOfSubCatPage(
+                                  categoryId: document.id,
+                                ),
                               ),
-                            ),
-                          );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        textStyle: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w400,
+                            );
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          elevation: 0,
+                          textStyle: const TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(data['name']),
+                              const Icon(Icons.arrow_forward_ios_sharp)
+                            ],
+                          ),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(data['name']),
-                            const Icon(Icons.arrow_forward_ios_sharp)
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+                ),
               ),
             ]),
+            drawer: const SharedDrawer(),
           );
         });
   }

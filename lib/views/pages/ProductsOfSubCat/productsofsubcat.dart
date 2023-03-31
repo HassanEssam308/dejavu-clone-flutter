@@ -1,3 +1,4 @@
+import 'package:dejavu_clone/Views/widgets/AppBarProducts.dart';
 import 'package:dejavu_clone/views/widgets/products.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,13 @@ class ProductsOfSubCatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(subCategoryName),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        elevation: 0,
-      ),
+      appBar:AppBarProducts(subCateName:subCategoryName ,) ,
+      // AppBar(
+      //   title: Text(subCategoryName),
+      //   backgroundColor: Colors.white,
+      //   foregroundColor: Colors.black,
+      //   elevation: 0,
+      // ),
       body:Column(
         children: [
           Products(subCategoryId:subCategoryID ,),
