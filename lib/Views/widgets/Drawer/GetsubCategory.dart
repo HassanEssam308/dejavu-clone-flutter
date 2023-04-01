@@ -15,7 +15,7 @@ class GetSubCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> categories = FirebaseFirestore.instance
         .collection('subcategory')
-        .where('catname', isEqualTo: categoryName)
+        .where('category.catname', isEqualTo: categoryName)
         .snapshots();
     return StreamBuilder<QuerySnapshot>(
         stream: categories,

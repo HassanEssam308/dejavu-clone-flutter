@@ -23,7 +23,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
   
       final Stream<QuerySnapshot> subCategories = FirebaseFirestore.instance
           .collection('subcategory')
-          .where('catid', isEqualTo: categoryId)
+          .where('category.catid', isEqualTo: categoryId)
           .snapshots();
       return StreamBuilder<QuerySnapshot>(
           stream: subCategories,
@@ -44,7 +44,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
               appBar: AppBar( 
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
-                title: Text(' ${snapshot.data!.docs[0]['catname']}'),
+                title: Text(' ${snapshot.data!.docs[0]['category.catname']}'),
               ),
               body: ListView(
                 children: [
@@ -52,7 +52,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Text(
-                        ' ${snapshot.data!.docs[0]['catname']} Collection',
+                        ' ${snapshot.data!.docs[0]['category.catname']} Collection',
                         style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
