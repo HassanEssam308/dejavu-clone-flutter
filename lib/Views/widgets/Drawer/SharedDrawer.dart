@@ -4,7 +4,7 @@ import 'package:dejavu_clone/Views/widgets/Drawer/GetsubCategory.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../pages/User/Login.dart';
-
+import'../../pages/Cart/Cart.dart';
 class SharedDrawer extends StatefulWidget {
   const SharedDrawer({super.key});
 
@@ -188,7 +188,18 @@ class _SharedDrawerState extends State<SharedDrawer> {
             ),
           ),
           const SizedBox(height: 15),
-          screens('Cart'),
+          ///// Cart /////////////////
+          const SizedBox(height: 12.5),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: InkWell(
+              child: const Text('Cart', style: TextStyle(fontSize: 20)),
+              onTap: () {
+                Get.to(()=> Cart());
+              },
+            ),
+          ),
+         
           screens('Wishlist'),
           screens('About us'),
           screens('Contact us'),
