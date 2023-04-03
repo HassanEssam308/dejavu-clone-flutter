@@ -76,6 +76,7 @@ class Products extends StatelessWidget {
                         ),
                       ),
                       child: MaterialButton(
+                              hoverColor:Colors.white,
                         onPressed: () {},
                         child:
                             Column(

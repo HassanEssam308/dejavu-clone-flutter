@@ -32,25 +32,26 @@ class Home extends StatelessWidget {
               height: 10,
             ),
             Row(
-              children: [
-                 Padding(
-                      padding: EdgeInsets.fromLTRB(5, 15, 15, 20),
-                    ),
-                  listCategory(),
-                  listCategoryy()
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                //  Padding(
+                //       padding: EdgeInsets.fromLTRB(5, 15, 15, 20),
+                //     ),
+                  ListCategory(),
+                  ListCategoryy()
               ],
 
             ),
           
-            SizedBox(height: 6),
-            Text(
+            const SizedBox(height: 6),
+            const Text(
               'New Collecion',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 2,
             ),
-            divide(),
+            const divide(),
             SizedBox(height: 6),
             Container(
               height: 200,

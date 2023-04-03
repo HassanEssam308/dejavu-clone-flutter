@@ -50,9 +50,11 @@ class ProductsOfOffers extends StatelessWidget {
                         ),
                       ),
                       child: MaterialButton(
+                         hoverColor:Colors.white,
                         onPressed: () {},
                         child:
-                            Column( children: [
+                            Column( 
+                              children: [
                           Expanded(
                             flex: 1,
                             child: Image.network(
@@ -74,7 +76,7 @@ class ProductsOfOffers extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   )
                                 : Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
                                         'EGP${data['old_price']}',

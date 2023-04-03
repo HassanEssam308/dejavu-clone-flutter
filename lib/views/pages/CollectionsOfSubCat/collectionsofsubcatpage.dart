@@ -78,6 +78,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width / 3,
                           child: ElevatedButton(
+                            
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -92,6 +93,7 @@ class CollectionsOfSubCatPage extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.black,
                               backgroundColor: Colors.white,
+                        
                               elevation: 0,
                               // alignment:,
                               //  minimumSize:,
