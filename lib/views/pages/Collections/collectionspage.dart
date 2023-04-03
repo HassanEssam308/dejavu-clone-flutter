@@ -12,8 +12,7 @@ class CollectionsOfCategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> categories =
-        FirebaseFirestore.instance.
-        collection('category').snapshots();
+        FirebaseFirestore.instance.collection('category').snapshots();
     return StreamBuilder<QuerySnapshot>(
         stream: categories,
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -31,7 +30,8 @@ class CollectionsOfCategoriesPage extends StatelessWidget {
             appBar: BaseAppBar(),
             body: ListView(children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 child: Column(
                   children:
                       snapshot.data!.docs.map((DocumentSnapshot document) {
