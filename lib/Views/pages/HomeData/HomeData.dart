@@ -44,6 +44,7 @@ class ProductData extends StatelessWidget {
                             child: Image.network(    
                               data['imgs'][0],
                               width: 60,
+                              
                               height: 60,
                             ),
                           ),
