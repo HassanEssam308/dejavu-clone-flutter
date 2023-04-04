@@ -18,6 +18,13 @@ class Cart extends StatelessWidget {
           ),
           elevation: 0,
           backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+           leading: IconButton(
+    icon: Icon(Icons.arrow_back),
+onPressed: () {
+  Navigator.pop(context);
+},
+  ),
         ),
         body: Container(
           alignment: Alignment.center,
