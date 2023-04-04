@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+import 'package:dejavu_clone/Cart.dart';
+>>>>>>> Stashed changes
 
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -25,7 +29,14 @@ class MyApp extends StatelessWidget {
          primarySwatch: Colors.blue, 
        scaffoldBackgroundColor: Colors.white,
       ),
+<<<<<<< Updated upstream
       home: const MainScreen(),
+=======
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: cart()
+      // home : BottomButton()
+
+>>>>>>> Stashed changes
     );
   }
 }
