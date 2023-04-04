@@ -1,8 +1,36 @@
+import 'package:dejavu_clone/Views/pages/User/Login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ResetPassword extends StatelessWidget {
   ResetPassword({super.key});
   final emailControll = TextEditingController();
+  final auth = FirebaseAuth.instance;
+
+  Future passwordReset(BuildContext ctx) async {
+    try {
+      final bool emailValid = RegExp(
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+          .hasMatch(emailControll.text);
+      if (emailControll.text.isEmpty) {
+        ScaffoldMessenger.of(ctx)
+            .showSnackBar(const SnackBar(content: Text("Enter your email")));
+      } else if (!emailValid) {
+        ScaffoldMessenger.of(ctx)
+            .showSnackBar(const SnackBar(content: Text("Enter vaild email")));
+      } else {
+        await auth.sendPasswordResetEmail(email: emailControll.text.trim());
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(ctx).showSnackBar(
+            const SnackBar(content: Text("Please , Check your Email")));
+        Get.to(() => Login());
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(ctx)
+          .showSnackBar(const SnackBar(content: Text("Enter Correct Email")));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +82,7 @@ class ResetPassword extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () => passwordReset(context),
             ),
           ],
         ),
