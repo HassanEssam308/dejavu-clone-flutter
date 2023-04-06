@@ -14,17 +14,25 @@ class Cart extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             'Cart',
-            style: TextStyle(color: Colors.black),
+           
+  ),
+   leading: IconButton(
+    icon: Icon(Icons.arrow_back),
+   onPressed: () {
+  Navigator.pop(context);
+},
           ),
           elevation: 0,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
+          
            leading: IconButton(
     icon: Icon(Icons.arrow_back),
 onPressed: () {
   Navigator.pop(context);
 },
   ),
+
         ),
         body: Container(
           alignment: Alignment.center,
@@ -78,7 +86,7 @@ onPressed: () {
                           Get.to(() => Home());
                         },
                         child: const Text(
-                          'Shop Now ',
+                          'Shop Now ', style: TextStyle(fontSize: 17),
                         ), // trying to move to the bottom
                       ),
                     )),
