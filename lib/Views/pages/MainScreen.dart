@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   int count = 0;
   List<Widget> Pages = [
-    const Home(),
+     Home(),
     const CollectionsOfCategoriesPage(),
     const IsLogged(),
   ];

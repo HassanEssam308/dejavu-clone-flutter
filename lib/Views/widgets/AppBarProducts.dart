@@ -36,11 +36,11 @@ class AppBarProducts extends StatelessWidget with PreferredSizeWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 7),
               child: CircleAvatar(
-                radius: 15,
+                radius: 12,
                 backgroundColor: Colors.black,
                 foregroundColor: Colors.white,
                 child: Text(
-                  '$count',
+                  '$count',style: const TextStyle(fontSize: 12),
                 ),
               ),
             )

@@ -10,7 +10,7 @@ class SubCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> subcategories = FirebaseFirestore.instance
         .collection('subcategory')
-        .where('catid', isEqualTo: categoryId)
+        .where('category.catid', isEqualTo: categoryId)
         .snapshots();
     return StreamBuilder<QuerySnapshot>(
       stream: subcategories,
@@ -28,12 +28,11 @@ class SubCategories extends StatelessWidget {
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-      
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
                 child: TextButton(
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.white,
@@ -47,9 +46,9 @@ class SubCategories extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>  ProductsOfSubCatPage(
-                            subCategoryID:document.id,
-                             subCategoryName:'${data['name']}'),
+                        builder: (context) => ProductsOfSubCatPage(
+                            subCategoryID: document.id,
+                            subCategoryName: '${data['name']}'),
                       ),
                     );
                   },
@@ -58,7 +57,6 @@ class SubCategories extends StatelessWidget {
                       Text(data['name']),
                     ],
                   ),
-                  
                 ),
               );
             }).toList(),

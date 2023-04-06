@@ -1,3 +1,4 @@
+import 'package:dejavu_clone/Views/widgets/AppBarProducts.dart';
 import 'package:dejavu_clone/views/pages/Collections/collectionspage.dart';
 import 'package:flutter/material.dart';
 import './subcategories.dart';
@@ -15,12 +16,7 @@ class ProductsOfCategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(categoryName),
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        elevation: 0,
-      ),
+      appBar:AppBarProducts(subCateName:categoryName ,),
       body: Container(
         color: Colors.white,
         child: Column(
@@ -30,17 +26,6 @@ class ProductsOfCategoryPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                      MaterialPageRoute(
-                        builder: (context) => 
-                         const CollectionsOfCategoriesPage(),
-                      ),
-                    );
-                    },
-                    child: const Text('collections'),
-                  ),
                   SubCategories(
                     categoryId: categoryID,
                   ),
@@ -57,7 +42,7 @@ class ProductsOfCategoryPage extends StatelessWidget {
 
 // final Stream<QuerySnapshot> _subcategory = FirebaseFirestore.instance
 //     .collection('subcategory')
-//     .where('catid', isEqualTo: 'vBEYRuSj9Us4ZPPUbg13')
+//     .where('category.catid', isEqualTo: 'vBEYRuSj9Us4ZPPUbg13')
 //     .snapshots();
 
 // StreamBuilder<QuerySnapshot>(
