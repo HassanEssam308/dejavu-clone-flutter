@@ -1,9 +1,10 @@
 import 'package:dejavu_clone/Views/pages/Collections/collectionspage.dart';
+import 'package:dejavu_clone/Views/pages/User/IsLogged.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'Home.dart';
 import 'User/Login.dart';
-
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,14 +19,14 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> Pages = [
      Home(),
     const CollectionsOfCategoriesPage(),
-    Login()
+    const IsLogged(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        unselectedItemColor: Color.fromARGB(255, 176, 175, 175),
+        unselectedItemColor: const Color.fromARGB(255, 176, 175, 175),
         selectedItemColor: Colors.black,
         selectedFontSize: 12,
         items: const [
@@ -37,22 +38,23 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.collections_bookmark_sharp,
-                size: 35,
-              ),
-              label: 'Collections',),
+            icon: Icon(
+              Icons.collections_bookmark_sharp,
+              size: 35,
+            ),
+            label: 'Collections',
+          ),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.explore,
+                Icons.person,
                 size: 35,
               ),
-          //     label: 'Blogs'),
-          // BottomNavigationBarItem(
-          //     icon: Icon(
-          //       Icons.person_2_rounded,
-          //       size: 35,
-          //     ),
+              //     label: 'Blogs'),
+              // BottomNavigationBarItem(
+              //     icon: Icon(
+              //       Icons.person_2_rounded,
+              //       size: 35,
+              //     ),
               label: 'Person')
         ],
         onTap: (index) {
