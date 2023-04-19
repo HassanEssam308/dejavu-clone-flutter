@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 
 class AppBarProducts extends StatelessWidget with PreferredSizeWidget {
   final String subCateName;
@@ -11,16 +13,16 @@ class AppBarProducts extends StatelessWidget with PreferredSizeWidget {
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
       title: Text(
-        subCateName,
+        subCateName.tr,
 
       ),
       elevation: 0,
       actions: [
-          const Icon(
-            Icons.search,
-            color: Color.fromARGB(255, 60, 59, 59),
-            size: 28,
-          ),
+          // const Icon(
+          //   Icons.search,
+          //   color: Color.fromARGB(255, 60, 59, 59),
+          //   size: 28,
+          // ),
         Stack(
           alignment: Alignment.topRight,
           children: [
