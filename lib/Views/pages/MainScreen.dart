@@ -3,6 +3,7 @@ import 'package:dejavu_clone/Views/pages/User/IsLogged.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'Home.dart';
 import 'User/Login.dart';
 
@@ -29,23 +30,23 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: const Color.fromARGB(255, 176, 175, 175),
         selectedItemColor: Colors.black,
         selectedFontSize: 12,
-        items: const [
+        items:  [
           BottomNavigationBarItem(
-            icon: Icon(
+            icon:const Icon(
               Icons.home_outlined,
               size: 35,
             ),
-            label: 'Home',
+            label: 'Home'.tr,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
+           BottomNavigationBarItem(
+            icon:const Icon(
               Icons.collections_bookmark_sharp,
               size: 35,
             ),
-            label: 'Collections',
+            label: 'Collection'.tr,
           ),
           BottomNavigationBarItem(
-              icon: Icon(
+              icon:const Icon(
                 Icons.person,
                 size: 35,
               ),
@@ -55,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
               //       Icons.person_2_rounded,
               //       size: 35,
               //     ),
-              label: 'Person')
+              label: 'Person'.tr)
         ],
         onTap: (index) {
           _currentIndex = index;

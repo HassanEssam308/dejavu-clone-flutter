@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatelessWidget {
@@ -12,7 +13,7 @@ class Products extends StatelessWidget {
     // final double itemHeigth = size.height / 2;
     // final double itemWidth = size.width / 1.5;
 
-  final  Stream<QuerySnapshot> _products;
+    final Stream<QuerySnapshot> _products;
 
     if (categoryId != '') {
       _products = FirebaseFirestore.instance
@@ -76,11 +77,9 @@ class Products extends StatelessWidget {
                         ),
                       ),
                       child: MaterialButton(
-                              hoverColor:Colors.white,
+                        hoverColor: Colors.white,
                         onPressed: () {},
-                        child:
-                            Column(
-                           children: [
+                        child: Column(children: [
                           Expanded(
                             flex: 1,
                             child: Image.network(
@@ -88,7 +87,9 @@ class Products extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            data['name'],
+                            MylocaleController.currentlang == 'ar'
+                                ? data['name_ar']
+                                : data['name'],
                             style: const TextStyle(
                               fontSize: 17,
                             ),
@@ -96,7 +97,9 @@ class Products extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Text(
-                              'EGP ${data['new_price']}',
+                              MylocaleController.currentlang == 'ar'
+                                  ? '${data['new_price']} ج.م '
+                                  : 'EGP ${data['new_price']}',
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                             ),

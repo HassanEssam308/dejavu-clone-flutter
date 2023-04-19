@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
 
 class ProductData extends StatelessWidget {
@@ -49,15 +50,19 @@ class ProductData extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          data['name'],
+                          MylocaleController.currentlang == 'ar'
+                              ? data['name_ar']
+                              : data['name'],
                           style: const TextStyle(
-                            fontSize: 17,
+                            fontSize: 15,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Text(
-                            'EGP ${data['new_price']}',
+                            (MylocaleController.currentlang == 'ar')
+                                ? '${data['new_price']} ج.م '
+                                : 'EGP ${data['new_price']}',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         )

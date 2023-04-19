@@ -1,5 +1,6 @@
 import 'package:dejavu_clone/Views/widgets/BaseAppBar.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:dejavu_clone/views/pages/CollectionsOfSubCat/collectionsofsubcatpage.dart';
 import 'package:dejavu_clone/views/pages/ProductsOfOffers/productsofofferspage.dart';
 
@@ -81,7 +82,8 @@ class CollectionsOfCategoriesPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(data['name']),
+                              Text(MylocaleController.currentlang=='ar' ? data['name_ar']:
+                                data['name']),
                               const Icon(Icons.arrow_forward_ios_sharp)
                             ],
                           ),

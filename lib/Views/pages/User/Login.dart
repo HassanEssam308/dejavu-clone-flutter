@@ -33,26 +33,26 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'dejavu',
-                  style: TextStyle(
+                 Text(
+                  'dejavu'.tr,
+                  style:const TextStyle(
                     fontSize: 32,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                 ),
                 const SizedBox(height: 50),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration:  InputDecoration(
                     label: Text(
-                      'Email',
-                      style: TextStyle(fontSize: 22),
+                      'Email'.tr,
+                      style:const TextStyle(fontSize: 22),
                     ),
-                    border: OutlineInputBorder(),
+                    border:const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Enter your email")));
+                           SnackBar(content: Text("EnterYourEmail".tr)));
                     }
                     return null;
                   },
@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                 const SizedBox(height: 20),
                 TextFormField(
                   decoration: InputDecoration(
-                    label: const Text('Password must contains 6 letters'),
+                    label:  Text('PasswordMustContains6Letters'.tr),
                     labelStyle: const TextStyle(fontSize: 18),
                     border: const OutlineInputBorder(),
                     suffixIcon: IconButton(
@@ -79,7 +79,7 @@ class _LoginState extends State<Login> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Enter your password")));
+                           SnackBar(content: Text("EnterYour Password".tr)));
                     }
                     return null;
                   },
@@ -95,10 +95,10 @@ class _LoginState extends State<Login> {
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(5)),
                         color: Colors.black),
-                    child: const Center(
+                    child:  Center(
                       child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 22),
+                        'Login'.tr,
+                        style:const TextStyle(color: Colors.white, fontSize: 22),
                       ),
                     ),
                   ),
@@ -111,8 +111,8 @@ class _LoginState extends State<Login> {
                         Get.to(() => Account());
                       }
                     } catch (error) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text("Enter correct detalis")));
+                      ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+                          content: Text("EnterCorrectDetalis".tr)));
                     }
                   },
                 ),
@@ -120,13 +120,13 @@ class _LoginState extends State<Login> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text('Having trouble?',
-                        style: TextStyle(fontSize: 16, color: Colors.grey)),
+                     Text('Havingtrouble'.tr,
+                        style:const TextStyle(fontSize: 16, color: Colors.grey)),
                     const SizedBox(width: 5),
                     InkWell(
-                      child: const Text(
-                        'Reset your password',
-                        style: TextStyle(fontSize: 18),
+                      child:  Text(
+                        'ResetYourPassword'.tr,
+                        style:const TextStyle(fontSize: 18),
                       ),
                       onTap: () {
                         Get.to(() => ResetPassword());
@@ -144,15 +144,15 @@ class _LoginState extends State<Login> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Don't have an account?",
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                       Text(
+                        "Don'tHaveAnAccount".tr,
+                        style:const TextStyle(color: Colors.grey, fontSize: 18),
                       ),
                       const SizedBox(width: 5),
                       InkWell(
-                        child: const Text(
-                          'REGISTER',
-                          style: TextStyle(fontSize: 20),
+                        child:  Text(
+                          'REGISTER'.tr,
+                          style: const TextStyle(fontSize: 20),
                         ),
                         onTap: () {
                           Get.to(() => const Register());
