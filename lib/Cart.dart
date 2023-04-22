@@ -12,6 +12,7 @@ class cart extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+
       home: Scaffold(
           backgroundColor: Colors.grey,
           appBar: AppBar(
