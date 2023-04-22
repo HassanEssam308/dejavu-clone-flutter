@@ -1,11 +1,7 @@
 import 'package:dejavu_clone/Views/widgets/BaseAppBar.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'HomeData/HomeData.dart';
 import 'HomeData/Textsearch.dart';
 import 'HomeData/ListCategory.dart';
@@ -44,9 +40,9 @@ class Home extends StatelessWidget {
             ),
           
             const SizedBox(height: 6),
-            const Text(
-              'New Collecion',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+             Text(
+              'NewCollection'.tr,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 2,
@@ -61,7 +57,7 @@ class Home extends StatelessWidget {
               height: 5,
             ),
             Text(
-              'Shop the look',
+              'ShopTheLook'.tr,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -72,7 +68,7 @@ class Home extends StatelessWidget {
             ShopLook(),
             SizedBox(height: 10),
             Text(
-              'End Of Season Sale',
+              'EndOfSeasonSale'.tr,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
