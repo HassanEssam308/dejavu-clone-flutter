@@ -7,6 +7,7 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       home: Scaffold(
           backgroundColor: Colors.grey,
           appBar: AppBar(
