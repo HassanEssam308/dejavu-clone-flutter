@@ -1,11 +1,10 @@
 import 'package:dejavu_clone/Views/pages/Collections/collectionspage.dart';
 import 'package:dejavu_clone/Views/pages/User/IsLogged.dart';
+import '../pages/Wishlist/wishlist_page.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'Home.dart';
-import 'User/Login.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -20,6 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> Pages = [
      Home(),
     const CollectionsOfCategoriesPage(),
+    WishlistPage(),
     const IsLogged(),
   ];
   @override
@@ -47,15 +47,15 @@ class _MainScreenState extends State<MainScreen> {
           ),
           BottomNavigationBarItem(
               icon:const Icon(
-                Icons.person,
+                Icons.favorite_border_outlined,
                 size: 35,
               ),
-              //     label: 'Blogs'),
-              // BottomNavigationBarItem(
-              //     icon: Icon(
-              //       Icons.person_2_rounded,
-              //       size: 35,
-              //     ),
+                  label: 'wishlist'.tr,),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.person,
+                    size: 35,
+                  ),
               label: 'Person'.tr)
         ],
         onTap: (index) {

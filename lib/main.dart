@@ -1,5 +1,4 @@
 
-import 'package:dejavu_clone/Cart.dart';
 import 'package:dejavu_clone/locale/locale.dart';
 import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';

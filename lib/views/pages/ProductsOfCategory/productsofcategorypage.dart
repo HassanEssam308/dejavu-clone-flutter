@@ -1,5 +1,4 @@
 import 'package:dejavu_clone/Views/widgets/AppBarProducts.dart';
-import 'package:dejavu_clone/views/pages/Collections/collectionspage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import './subcategories.dart';

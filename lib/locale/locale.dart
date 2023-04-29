@@ -46,7 +46,14 @@ class Mylocale implements Translations {
           "YourCartIsEmpty": "Your Cart Is Empty",
           "ShopNow": "Shop Now",
           "ThereAreNoItemsAdded":
-              "There are no items added in your Cart.Shop more to add products to your cart"
+              "There are no items added in your Cart.Shop more to add products to your cart",
+          "Size": "Size*:",
+          "Color": "Color*:",
+          "productDescription": "product Description :",
+          "ADDTOBAG": "ADD TO BAG",
+          "YourWishlist":"Your Wishlist will live here",
+           "ExploreWishlist":"Explore variety of Products and add your favorite product to Wishlist",
+            "StartShopping":"Start shopping, now!",
         },
         "ar": {
           "Shoes": "أحذيه",
@@ -88,10 +95,17 @@ class Mylocale implements Translations {
           "EnterYour Password": "ادخل كلمة السر",
           "Home": "الرئيسية",
           "Person": "الملف الشخصي",
-          "YourCartIsEmpty":"عربة التسوق فارغة",
+          "YourCartIsEmpty": "عربة التسوق فارغة",
           "ShopNow": "تسوق الآن",
           "ThereAreNoItemsAdded":
-             "لا توجد عناصر مضافة في عربة التسوق الخاصة بك. تسوق أكثر لإضافة منتجات إلى سلة التسوق الخاصة بك"
+              "لا توجد عناصر مضافة في عربة التسوق الخاصة بك. تسوق أكثر لإضافة منتجات إلى سلة التسوق الخاصة بك",
+          "Size": "الحجم * :",
+          "Color": "اللون * :",
+          "productDescription": "وصف المنتج",
+          "ADDTOBAG": "اضف الي الحقيبة",
+           "YourWishlist":"قائمة الرغبات الخاصة بك ستظهر هنا",
+           "ExploreWishlist":"اكتشف مجموعة متنوعة من المنتجات وأضف منتجك المفضل إلى قائمة الرغبات",
+            "StartShopping":"ابدأ التسوق الآن!",
         },
       };
 }
