@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/Views/pages/ProductDetails/product_details_page.dart';
 import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductData extends StatelessWidget {
   @override
@@ -32,7 +34,9 @@ class ProductData extends StatelessWidget {
                     height: 150,
                     width: 130,
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProductDetails(productID: document.id));
+                      },
                       child: Column(children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 60),

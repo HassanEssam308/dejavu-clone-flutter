@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/Views/pages/ProductDetails/product_details_page.dart';
 import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductsOfOffers extends StatelessWidget {
   final String categoryID;
@@ -38,7 +40,8 @@ class ProductsOfOffers extends StatelessWidget {
               children: snapshot.data!.docs.map((DocumentSnapshot document) {
                 Map<String, dynamic> data =
                     document.data()! as Map<String, dynamic>;
-                return Column(
+                return 
+                Column(
                   children: [
                     Container(
                       height: MediaQuery.of(context).size.height / 2.6,
@@ -52,7 +55,11 @@ class ProductsOfOffers extends StatelessWidget {
                       ),
                       child: MaterialButton(
                         hoverColor: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                           Get.to(() => ProductDetails(
+                                productID: document.id,
+                              ));
+                        },
                         child: Column(children: [
                           Expanded(
                             flex: 1,

@@ -53,7 +53,8 @@ class Cart extends StatelessWidget {
                 ],
               ))),
               Expanded(
-                  child: Align(
+                  child:
+                   Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
                     width: 400,

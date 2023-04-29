@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/Views/pages/ProductDetails/product_details_page.dart';
 import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Products extends StatelessWidget {
   final String categoryId;
@@ -27,13 +29,6 @@ class Products extends StatelessWidget {
           .snapshots();
     }
 
-    // final Stream<QuerySnapshot> products = FirebaseFirestore.instance
-    //     .collection('product')
-    //      .where('catid', isEqualTo: 'cgCpnqSfoejbeTYqAxQE')
-    //     .where('catid', isEqualTo:categoryId)
-    //      .where('subid', isEqualTo:(subCategoryId!='')?subCategoryId:'')
-    //     .snapshots();
-
     return StreamBuilder<QuerySnapshot>(
       stream: _products,
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -54,17 +49,6 @@ class Products extends StatelessWidget {
                 Map<String, dynamic> data =
                     document.data()! as Map<String, dynamic>;
                 return Column(
-                  // GridView.count(
-                  //   crossAxisCount: 2,
-                  //   crossAxisSpacing: 0,
-                  //   mainAxisSpacing: 0,
-                  //   childAspectRatio: (itemWidth/itemHeigth),
-                  //     children:
-                  //     snapshot.data!.docs.map((DocumentSnapshot document) {
-                  //       Map<String, dynamic> data =
-                  //           document.data()! as Map<String, dynamic>;
-                  //       return Column(
-
                   children: [
                     Container(
                       height: MediaQuery.of(context).size.height / 2.6,
@@ -78,7 +62,12 @@ class Products extends StatelessWidget {
                       ),
                       child: MaterialButton(
                         hoverColor: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          // print(document.id);
+                          Get.to(() => ProductDetails(
+                                productID: document.id,
+                              ));
+                        },
                         child: Column(children: [
                           Expanded(
                             flex: 1,
