@@ -60,14 +60,14 @@ class _MySliderState extends State<MySlider> {
           },
           style: OutlinedButton.styleFrom(
             backgroundColor:
-                (valueOfSize == size) ? Colors.black : Colors.white,
+                (valueOfSize == size.toString()) ? Colors.black : Colors.white,
           ),
           child: Text(
             (MylocaleController.currentlang == 'ar' && size == 'one size')
                 ? 'قطعة واحدة'
                 : size,
             style: TextStyle(
-              color: (valueOfSize == size) ? Colors.white : Colors.grey[400],
+              color: (valueOfSize == size.toString()) ? Colors.white : Colors.grey[400],
             ),
           ),
         ),
@@ -172,8 +172,8 @@ class _MySliderState extends State<MySlider> {
               child: Row(
                 children:
                     List.generate([...product['size'].keys].length, (index) {
-                  return CustomRadioButtonOfSize(
-                      [...product['size'].keys][index], index);
+                  return
+                   CustomRadioButtonOfSize( [...product['size'].keys][index], index);
                 }),
               ),
             ),

@@ -34,6 +34,11 @@ class EmptyWishlistPage extends StatelessWidget {
             child: TextButton(
               onPressed: () {
                 Get.off(MainScreen());
+             
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => MainScreen()),
+                // );
               },
               child: Text(
                 'StartShopping'.tr,

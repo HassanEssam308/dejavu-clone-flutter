@@ -25,10 +25,10 @@ class _FavoriteProductState extends State<FavoriteProduct> {
     bool isFavorited = false;
 
     if (listOfFavoriteProducts.isNotEmpty) {
-            print(listOfFavoriteProducts[0]['id']);
-      for (var item in listOfFavoriteProducts) {
+      // print(listOfFavoriteProducts[0]['id']);
+      for (var id in listOfFavoriteProducts) {
         // print(item['id']);
-        if (item['id'] == widget.snapshotOfData.id) {
+        if (id == widget.snapshotOfData.id) {
           isFavorited = true;
           print('isFavorited=$isFavorited');
         }
@@ -37,29 +37,22 @@ class _FavoriteProductState extends State<FavoriteProduct> {
 
     Future<void> addFavoriteProduct() async {
       if (isFavorited == true) {
-        print("if");
+        
         listOfFavoriteProducts
-            .removeWhere((item) => item['id'] == widget.snapshotOfData.id);
+            .removeWhere((id) => id == widget.snapshotOfData.id);
         await box.write("listOfFavorites", [...listOfFavoriteProducts]);
         isFavorited = false;
-        print('remove isFavorited=$isFavorited');
+        // print('remove isFavorited=$isFavorited');
 
-        setState(() {});
       } else {
-        print("add= ${widget.snapshotOfData.id}");
-       
-        //  setState(() {  isFavorited = true;});
-         Map<String, dynamic> id ={"id":(widget.snapshotOfData.id)} ;
-        // ProductModel product =
-        //   await  ProductModel.fromJson(widget.snapshotOfData.data(), id);
-         ProductModel product =
-          await  ProductModel.fromJson(widget.snapshotOfData.data(),id);
-        await box
-            .write("listOfFavorites", [...listOfFavoriteProducts, product]);
-               print("id= ${product.id}");
+
+        // print("add= ${widget.snapshotOfData.id}");
+        isFavorited = true;
+        await box.write("listOfFavorites",
+            [...listOfFavoriteProducts, widget.snapshotOfData.id]);
       }
 
-      // setState(() {});
+      setState(() {});
     }
 
     return Padding(
@@ -92,9 +85,14 @@ class _FavoriteProductState extends State<FavoriteProduct> {
 
 
 
+
+
+
+
+
+
+
 // class _FavoriteProductState extends State<FavoriteProduct> {
-
-
 //   @override
 //   Widget build(BuildContext context) {
 //     // print(widget.snapshotOfData.data());
@@ -105,72 +103,43 @@ class _FavoriteProductState extends State<FavoriteProduct> {
 
 //     bool isFavorited = false;
 
-//     // print('first $listOfFavoriteProducts');
-
-//     for (var item in listOfFavoriteProducts) {
-//         print(item['id']);
-//         // print(widget.snapshotOfData.id);
-//         // if (item['id'] == widget.snapshotOfData.id) {
-//         //   print(widget.snapshotOfData.id);
-//         //   isFavorited = true;
-//         // }
+//     if (listOfFavoriteProducts.isNotEmpty) {
+//       // print(listOfFavoriteProducts[0]['id']);
+//       for (var item in listOfFavoriteProducts) {
+//         // print(item['id']);
+//         if (item['id'] == widget.snapshotOfData.id) {
+//           isFavorited = true;
+//           print('isFavorited=$isFavorited');
+//         }
 //       }
-
-//     // void productIsFavorited() {
-//     //   print('productIsFavorited');
-//       // for (var item in listOfFavoriteProducts) {
-//       //   // print(item['id']);
-//       //   print(item.id);
-//       //   print(widget.snapshotOfData.id);
-//       //   if (item['id'] == widget.snapshotOfData.id) {
-//       //     print(widget.snapshotOfData.id);
-//       //     isFavorited = true;
-//       //   }
-//       // }
-//     // }
-
-//     void addFavoriteProduct() {
-//       // if (isFavorited == true) {
-//       //   listOfFavoriteProduct.remove(widget.snapshotOfData);
-//       //   print(listOfFavoriteProduct);
-//       //   isFavorited = false;
-//       //   box.write("listOfFavorites", [...listOfFavoriteProduct]);
-//       //   setState(() {});
-//       //   print('removed');
-
-//       //   print(box.read("listOfFavorites").length);
-//       // } else {
-
-//       // print(listOfFavoriteProducts);
-//       //  await
-
-
-
-   
-//       Product product = Product.fromJson(
-//           widget.snapshotOfData.data(), widget.snapshotOfData.id);
-//   //  print(product.id);
-
-
-//          box.write("listOfFavorites",
-//           [...listOfFavoriteProducts,product]);
-
-
-//       // setState(() {
-//       //   isFavorited = true;
-//       //   productIsFavorited();
-//       // });
-//       // print('add');
-//       // print(isFavorited);
-//       //  print(listOfFavoriteProducts);
-
-//       // }
 //     }
 
-//     // setState(() {
-//     //   productIsFavorited();
-//     //   //  print(listOfFavoriteProduct);
-//     // });
+//     Future<void> addFavoriteProduct() async {
+//       if (isFavorited == true) {
+//         print("if");
+//         listOfFavoriteProducts
+//             .removeWhere((item) => item['id'] == widget.snapshotOfData.id);
+//         await box.write("listOfFavorites", [...listOfFavoriteProducts]);
+//         isFavorited = false;
+//         print('remove isFavorited=$isFavorited');
+
+//         setState(() {});
+//       } else { 
+//         print("add= ${widget.snapshotOfData.id}");
+
+//         //  setState(() {  isFavorited = true;});
+//         Map<String, dynamic> id = {"id": (widget.snapshotOfData.id)};
+//         // ProductModel product =
+//         //   await  ProductModel.fromJson(widget.snapshotOfData.data(), id);
+//         ProductModel product =
+//             await ProductModel.fromJson(widget.snapshotOfData.data(), id);
+//         await box
+//             .write("listOfFavorites", [...listOfFavoriteProducts, product]);
+//         print("id= ${product.id}");
+//       }
+
+//       // setState(() {});
+//     }
 
 //     return Padding(
 //       padding: const EdgeInsets.all(20.0),
@@ -198,5 +167,3 @@ class _FavoriteProductState extends State<FavoriteProduct> {
 //     );
 //   }
 // }
-
-
