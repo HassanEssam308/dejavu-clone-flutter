@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:dejavu_clone/views/pages/ProductsOfSubCat/productsofsubcat.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +55,9 @@ class SubCategories extends StatelessWidget {
                   },
                   child: Row(
                     children: [
-                      Text(data['name']),
+                      Text(MylocaleController.currentlang == 'ar'
+                          ? data['name_ar']
+                          : data['name']),
                     ],
                   ),
                 ),
@@ -65,4 +68,5 @@ class SubCategories extends StatelessWidget {
       },
     );
   }
+
 }

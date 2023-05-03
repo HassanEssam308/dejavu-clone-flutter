@@ -2,6 +2,8 @@ import 'package:dejavu_clone/Views/pages/ProductsOfCategory/productsofcategorypa
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
+
 class ListCategoryy extends StatelessWidget {
   const ListCategoryy({super.key});
 
@@ -26,11 +28,11 @@ class ListCategoryy extends StatelessWidget {
                   image:  NetworkImage(
                       'https://cdn.shopify.com/s/files/1/0499/3079/7217/files/Dejavu-Button-Bags-Summer-2023-2_9e20f2ae-0e36-4ed4-aea5-050a84c2a675_720x.jpg?v=1680000171'))),
         ),
-        const Positioned(
+         Positioned(
           top: 80,
           left: 65,
           child: Text(
-            'Bags',
+          "Bags".tr,
             style: TextStyle(
               fontSize: 30,
               color: Colors.white,

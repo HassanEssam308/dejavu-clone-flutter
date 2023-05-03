@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/Views/pages/ProductDetails/product_details_page.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductsOfOffers extends StatelessWidget {
   final String categoryID;
@@ -37,7 +40,8 @@ class ProductsOfOffers extends StatelessWidget {
               children: snapshot.data!.docs.map((DocumentSnapshot document) {
                 Map<String, dynamic> data =
                     document.data()! as Map<String, dynamic>;
-                return Column(
+                return 
+                Column(
                   children: [
                     Container(
                       height: MediaQuery.of(context).size.height / 2.6,
@@ -50,11 +54,13 @@ class ProductsOfOffers extends StatelessWidget {
                         ),
                       ),
                       child: MaterialButton(
-                         hoverColor:Colors.white,
-                        onPressed: () {},
-                        child:
-                            Column( 
-                              children: [
+                        hoverColor: Colors.white,
+                        onPressed: () {
+                           Get.to(() => ProductDetails(
+                                productID: document.id,
+                              ));
+                        },
+                        child: Column(children: [
                           Expanded(
                             flex: 1,
                             child: Image.network(
@@ -62,7 +68,9 @@ class ProductsOfOffers extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            data['name'],
+                            MylocaleController.currentlang == 'ar'
+                                ? data['name_ar']
+                                : data['name'],
                             style: const TextStyle(
                               fontSize: 17,
                             ),
@@ -76,24 +84,36 @@ class ProductsOfOffers extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   )
                                 : Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'EGP${data['old_price']}',
+                                        MylocaleController.currentlang == 'ar'
+                                            ? '${data['old_price']} ج.م '
+                                            : 'EGP ${data['old_price']}',
+
+                                        // 'EGP${data['old_price']}',
                                         style: const TextStyle(
                                             decoration:
                                                 TextDecoration.lineThrough,
                                             fontSize: 12),
                                       ),
                                       Text(
-                                        'EGP ${data['new_price']}',
+                                        MylocaleController.currentlang == 'ar'
+                                            ? '${data['new_price']} ج.م '
+                                            : 'EGP ${data['new_price']}',
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        ' ${data['discount']} %OFF',
+                                        MylocaleController.currentlang == 'ar'
+                                            ? '${data['discount']} % خ'
+                                            : '%OFF ${data['discount']}',
+                                        // ' ${data['discount']} %OFF',
                                         style: const TextStyle(
-                                            color: Colors.red, fontSize: 12,),
+                                          color: Colors.red,
+                                          fontSize: 12,
+                                        ),
                                       )
                                     ],
                                   ),

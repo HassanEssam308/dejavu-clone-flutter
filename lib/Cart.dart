@@ -1,18 +1,12 @@
-import 'dart:io';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:footer/footer.dart';
-import 'package:footer/footer_view.dart';
 
-class cart extends StatelessWidget {
+
+class Cart extends StatelessWidget {
+  const Cart({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           backgroundColor: Colors.grey,
           appBar: AppBar(
               title: Text(
@@ -52,9 +46,7 @@ class cart extends StatelessWidget {
                 ),
               ],
             ),
-          )),
+          ),
     );
-
-    throw UnimplementedError();
   }
 }

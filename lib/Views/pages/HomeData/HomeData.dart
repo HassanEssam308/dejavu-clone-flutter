@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dejavu_clone/Views/pages/ProductDetails/product_details_page.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductData extends StatelessWidget {
   @override
@@ -31,7 +34,9 @@ class ProductData extends StatelessWidget {
                     height: 150,
                     width: 130,
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProductDetails(productID: document.id));
+                      },
                       child: Column(children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 60),
@@ -49,15 +54,19 @@ class ProductData extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          data['name'],
+                          MylocaleController.currentlang == 'ar'
+                              ? data['name_ar']
+                              : data['name'],
                           style: const TextStyle(
-                            fontSize: 17,
+                            fontSize: 15,
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Text(
-                            'EGP ${data['new_price']}',
+                            (MylocaleController.currentlang == 'ar')
+                                ? '${data['new_price']} ج.م '
+                                : 'EGP ${data['new_price']}',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         )

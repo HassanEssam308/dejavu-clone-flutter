@@ -1,9 +1,10 @@
 import 'package:dejavu_clone/Views/pages/Collections/collectionspage.dart';
+import 'package:dejavu_clone/Views/pages/User/IsLogged.dart';
+import '../pages/Wishlist/wishlist_page.dart';
 import 'package:dejavu_clone/Views/widgets/Drawer/SharedDrawer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'Home.dart';
-import 'User/Login.dart';
-
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -18,42 +19,44 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> Pages = [
      Home(),
     const CollectionsOfCategoriesPage(),
-    Login()
+    WishlistPage(),
+    const IsLogged(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        unselectedItemColor: Color.fromARGB(255, 176, 175, 175),
+        unselectedItemColor: const Color.fromARGB(255, 176, 175, 175),
         selectedItemColor: Colors.black,
         selectedFontSize: 12,
-        items: const [
+        items:  [
           BottomNavigationBarItem(
-            icon: Icon(
+            icon:const Icon(
               Icons.home_outlined,
               size: 35,
             ),
-            label: 'Home',
+            label: 'Home'.tr,
+          ),
+           BottomNavigationBarItem(
+            icon:const Icon(
+              Icons.collections_bookmark_sharp,
+              size: 35,
+            ),
+            label: 'Collection'.tr,
           ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.collections_bookmark_sharp,
+              icon:const Icon(
+                Icons.favorite_border_outlined,
                 size: 35,
               ),
-              label: 'Collections',),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.explore,
-                size: 35,
-              ),
-          //     label: 'Blogs'),
-          // BottomNavigationBarItem(
-          //     icon: Icon(
-          //       Icons.person_2_rounded,
-          //       size: 35,
-          //     ),
-              label: 'Person')
+                  label: 'wishlist'.tr,),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.person,
+                    size: 35,
+                  ),
+              label: 'Person'.tr)
         ],
         onTap: (index) {
           _currentIndex = index;

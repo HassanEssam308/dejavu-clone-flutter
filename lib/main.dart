@@ -1,12 +1,11 @@
 
-
-import 'package:dejavu_clone/Cart.dart';
-
-
+import 'package:dejavu_clone/locale/locale.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'firebase_options.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'Views/pages/MainScreen.dart';
 
 Future<void> main() async {
@@ -14,6 +13,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+   await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -23,16 +23,17 @@ class MyApp extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
+    Get.put(MylocaleController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: MylocaleController.initialLang,
+      translations: Mylocale(),
       theme: ThemeData(
-         primarySwatch: Colors.blue, 
-       scaffoldBackgroundColor: Colors.white,
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
       ),
 
       home: const MainScreen(),
-
     );
   }
 }
-

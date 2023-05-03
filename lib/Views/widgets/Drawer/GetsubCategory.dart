@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dejavu_clone/Views/pages/ProductsOfSubCat/productsofsubcat.dart';
+import 'package:dejavu_clone/locale/locale_controller.dart';
 import 'package:dejavu_clone/views/pages/ProductsOfOffers/productsofofferspage.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,7 @@ class GetSubCategory extends StatelessWidget {
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: Text(
+                    child: Text(MylocaleController.currentlang== 'ar' ?data['name_ar'] :
                     data['name'],
                       style: const TextStyle(fontSize: 18),
                     ),
