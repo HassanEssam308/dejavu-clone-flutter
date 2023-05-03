@@ -5,7 +5,10 @@ import 'package:dejavu_clone/Views/widgets/Drawer/GetsubCategory.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../pages/User/Login.dart';
-import'../../pages/Cart/Cart.dart';
+import '../../pages/Wishlist/wishlist_page.dart';
+
+import '../../pages/Cart/Cart.dart';
+
 class SharedDrawer extends StatefulWidget {
   const SharedDrawer({super.key});
 
@@ -39,10 +42,11 @@ class _SharedDrawerState extends State<SharedDrawer> {
               name,
               style: const TextStyle(fontSize: 20),
             ),
-            onTap: () {},
+            onTap: () {
+              Get.to(WishlistPage());
+            },
           ),
         ),
-
       ],
     );
   }
@@ -60,9 +64,9 @@ class _SharedDrawerState extends State<SharedDrawer> {
                 onPressed: () {
                   Get.to(() => const MainScreen());
                 },
-                child:  Text(
+                child: Text(
                   'Welcome'.tr,
-                  style:const TextStyle(
+                  style: const TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
@@ -73,10 +77,10 @@ class _SharedDrawerState extends State<SharedDrawer> {
           const SizedBox(height: 25),
           Center(
             child: InkWell(
-              child:  Padding(
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Text(
-                 " ${'Signin'.tr} /${ 'Signup'.tr}",
+                  " ${'Signin'.tr} /${'Signup'.tr}",
                   style: const TextStyle(fontSize: 25),
                 ),
               ),
@@ -86,8 +90,8 @@ class _SharedDrawerState extends State<SharedDrawer> {
             ),
           ),
           const SizedBox(height: 35),
-           Padding(
-            padding:const EdgeInsetsDirectional.only(start: 8),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 8),
             child: Text(
               'ShopbyCategory'.tr,
               style: const TextStyle(
@@ -106,13 +110,13 @@ class _SharedDrawerState extends State<SharedDrawer> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       Padding(
-                         padding: const EdgeInsets.symmetric(horizontal: 8),
-                         child: Text(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Text(
                           'Shoes'.tr,
-                          style:const TextStyle(fontSize: 20),
-                                             ),
-                       ),
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      ),
                       Icon((isOpenShoes == false) ? Icons.add : Icons.remove),
                     ],
                   ),
@@ -152,13 +156,13 @@ class _SharedDrawerState extends State<SharedDrawer> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       Padding(
-                         padding:  const EdgeInsets.symmetric(horizontal: 8),
-                         child: Text(
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Text(
                           'Bags'.tr,
-                          style:const TextStyle(fontSize: 20),
-                                             ),
-                       ),
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      ),
                       Icon((isOpenBags == false) ? Icons.add : Icons.remove),
                     ],
                   ),
@@ -191,9 +195,9 @@ class _SharedDrawerState extends State<SharedDrawer> {
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: InkWell(
-              child:  Padding(
-                padding: const   EdgeInsets.symmetric(horizontal: 8),
-                child: Text('Offers'.tr, style:const TextStyle(fontSize: 20)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Text('Offers'.tr, style: const TextStyle(fontSize: 20)),
               ),
               onTap: () {
                 Get.to(() => const ProductsOfOffersPage(
@@ -203,11 +207,11 @@ class _SharedDrawerState extends State<SharedDrawer> {
             ),
           ),
           const SizedBox(height: 15),
-           Padding(
-            padding:const EdgeInsetsDirectional.only (start: 10.0),
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 10.0),
             child: Text(
               'QuickLinks'.tr,
-              style:const TextStyle(fontSize: 20, color: Colors.grey),
+              style: const TextStyle(fontSize: 20, color: Colors.grey),
             ),
           ),
           const SizedBox(height: 15),
@@ -216,19 +220,17 @@ class _SharedDrawerState extends State<SharedDrawer> {
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 10.0),
             child: InkWell(
-              child:  Text(
-                'Cart'.tr
-              , style:const TextStyle(fontSize: 20)),
+              child: Text('Cart'.tr, style: const TextStyle(fontSize: 20)),
               onTap: () {
-                Get.to(()=> Cart());
+                Get.to(() => Cart());
               },
             ),
           ),
-         
+
           screens('Wishlist'.tr),
-          screens('Aboutus'.tr),
+          /*  screens('Aboutus'.tr),
           screens('Contactus'.tr),
-          screens('PrivacyPolicy'.tr),
+          screens('PrivacyPolicy'.tr), */
           const SizedBox(height: 15),
         ],
       ),
