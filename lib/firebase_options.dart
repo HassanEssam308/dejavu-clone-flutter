@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCWGJcIQWQ86GxANkx_QvkFJknOnHShPXM',
-    appId: '1:766943688283:web:98f86064843e383503b17e',
-    messagingSenderId: '766943688283',
-    projectId: 'dejavu-65fe7',
-    authDomain: 'dejavu-65fe7.firebaseapp.com',
-    storageBucket: 'dejavu-65fe7.appspot.com',
+    apiKey: 'AIzaSyAgHnePKMwNjLTgiTvCBE7rvhqGqi9LYM0',
+    appId: '1:189380682158:web:866cfb30c4325d0208a83f',
+    messagingSenderId: '189380682158',
+    projectId: 'dejavu1-c6625',
+    authDomain: 'dejavu1-c6625.firebaseapp.com',
+    storageBucket: 'dejavu1-c6625.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDcPIi0Gi2wGTDmLM4jErHKhifkhIFepF4',
-    appId: '1:766943688283:android:2ef2e6fba23bbe2f03b17e',
-    messagingSenderId: '766943688283',
-    projectId: 'dejavu-65fe7',
-    storageBucket: 'dejavu-65fe7.appspot.com',
+    apiKey: 'AIzaSyBoHZJ11rWKlSrWpqy5tJMAiVFOObmZBZo',
+    appId: '1:189380682158:android:857fb21e3c305bec08a83f',
+    messagingSenderId: '189380682158',
+    projectId: 'dejavu1-c6625',
+    storageBucket: 'dejavu1-c6625.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDfUDGKeK6_ZmFR-SMYM6fjsbzWSZkPxdA',
-    appId: '1:766943688283:ios:7cc3d65864f5cf0c03b17e',
-    messagingSenderId: '766943688283',
-    projectId: 'dejavu-65fe7',
-    storageBucket: 'dejavu-65fe7.appspot.com',
-    iosClientId: '766943688283-fdfohh7inqtcvmff7gufk4tg7crev2m2.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDQBhJJ6lXybInDdMoly82-o4KySqZx2hk',
+    appId: '1:189380682158:ios:167fe3cb407ad68708a83f',
+    messagingSenderId: '189380682158',
+    projectId: 'dejavu1-c6625',
+    storageBucket: 'dejavu1-c6625.appspot.com',
+    iosClientId: '189380682158-i445nu16c83haabco1vul1j2brs439r7.apps.googleusercontent.com',
     iosBundleId: 'com.example.dejavuClone',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDfUDGKeK6_ZmFR-SMYM6fjsbzWSZkPxdA',
-    appId: '1:766943688283:ios:7cc3d65864f5cf0c03b17e',
-    messagingSenderId: '766943688283',
-    projectId: 'dejavu-65fe7',
-    storageBucket: 'dejavu-65fe7.appspot.com',
-    iosClientId: '766943688283-fdfohh7inqtcvmff7gufk4tg7crev2m2.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDQBhJJ6lXybInDdMoly82-o4KySqZx2hk',
+    appId: '1:189380682158:ios:167fe3cb407ad68708a83f',
+    messagingSenderId: '189380682158',
+    projectId: 'dejavu1-c6625',
+    storageBucket: 'dejavu1-c6625.appspot.com',
+    iosClientId: '189380682158-i445nu16c83haabco1vul1j2brs439r7.apps.googleusercontent.com',
     iosBundleId: 'com.example.dejavuClone',
   );
 }

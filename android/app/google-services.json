@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "766943688283",
-    "project_id": "dejavu-65fe7",
-    "storage_bucket": "dejavu-65fe7.appspot.com"
+    "project_number": "189380682158",
+    "project_id": "dejavu1-c6625",
+    "storage_bucket": "dejavu1-c6625.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:766943688283:android:2ef2e6fba23bbe2f03b17e",
+        "mobilesdk_app_id": "1:189380682158:android:857fb21e3c305bec08a83f",
         "android_client_info": {
           "package_name": "com.example.dejavu_clone"
         }
       },
       "oauth_client": [
         {
-          "client_id": "766943688283-iompl1sin7g78239l9ju9oa4ajh9fpv6.apps.googleusercontent.com",
+          "client_id": "189380682158-v000tdvfkafh2lv753nssgv7ep2ivstj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDcPIi0Gi2wGTDmLM4jErHKhifkhIFepF4"
+          "current_key": "AIzaSyBoHZJ11rWKlSrWpqy5tJMAiVFOObmZBZo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "766943688283-iompl1sin7g78239l9ju9oa4ajh9fpv6.apps.googleusercontent.com",
+              "client_id": "189380682158-0j82dq9jtm0uor8tnnh1oe9m8cr5icop.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
